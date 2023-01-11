@@ -1,8 +1,8 @@
-import React, { useContext, useState } from 'react';
+import react from 'react';
 
 
 
-const Auth = () => {
+const Auth = ({formType='login'}) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -12,8 +12,11 @@ const Auth = () => {
     return (
 
         <div className='m-2'>
-            <form onSubmit={() => { }}
-             className="flex flex-col justify-center gap-y-1">
+            <form onSubmit={handleSubmit}  
+            className="flex flex-col justify-center gap-y-1">
+                
+            {formType ==='signup' && (
+            <> {' '}
                 <label htmlFor="email">Your Name</label>
                 <input type="text"
                     name="name"
@@ -25,11 +28,13 @@ const Auth = () => {
                     onChange={handleChange}
                     disabled={loading}
                 />
+                </>)}
                 <label htmlFor="email">Email</label>
                 <input
                     type="email"
                     name="email"
                     id="email"
+                    placeholder="email"
                 />
 
                 <label htmlFor="password">Password</label>
@@ -37,9 +42,10 @@ const Auth = () => {
                     typle="password"
                     name="password"
                     id="password"
+                    placeholder="password"
                 />
                 <button
-                    type="submit">Submit  </button>
+                    type="submit">Submit</button>
 
 
             </form>

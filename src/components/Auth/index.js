@@ -1,8 +1,14 @@
-import react from 'react';
+import React from 'react';
+import { AuthContext } from '../../state/AuthContext';
 
 
+const Auth = () => {
+    const {
+      state: { formType },
+      dispatch,
+    } = useContext(AuthContext);
+    
 
-const Auth = ({formType='login'}) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -14,7 +20,7 @@ const Auth = ({formType='login'}) => {
         <div className='m-2'>
             <form onSubmit={handleSubmit}  
             className="flex flex-col justify-center gap-y-1">
-                
+
             {formType ==='signup' && (
             <> {' '}
                 <label htmlFor="email">Your Name</label>

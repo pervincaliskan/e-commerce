@@ -1,6 +1,6 @@
-
 import { useRouter } from 'next/router';
-import React, { useState} from 'react';
+import React, { useContext, useState} from 'react';
+import { AuthContext } from '../../state/AuthContext';
 import Auth from '../Auth';
 import Modal from '../Modal';
 
@@ -10,6 +10,10 @@ const Layout = ({ children }) => {
 
   const [openModal, setOpenModal] = useState(false);
 
+  const {
+    state: { isModalOpen, formType, session, userDetails },
+    dispatch,
+  } = useContext(AuthContext);
 
   return (
     <div className="w-full h-full flex flex-col">
@@ -23,7 +27,11 @@ const Layout = ({ children }) => {
             <button
               className="px-4 py-2 text-lg bg-black  hover:text-black  hover:bg-white border-black border
               text-white rounded"
-              onClick={() => setOpenModal(true)
+              onClick={() =>
+                dispatch({
+                  type: 'OPEN_AUTH_MODAL',
+                  formType: 'signup',
+                })
               }
             >
               Sign up
@@ -33,7 +41,11 @@ const Layout = ({ children }) => {
             <button
               className="px-4 py-2 text-lg bg-black  hover:text-black  hover:bg-white border-black border
               text-white rounded"
-              onClick={() => setOpenModal(true)
+              onClick={() =>
+                dispatch({
+                  type: 'OPEN_AUTH_MODAL',
+                  formType: 'login',
+                })
               }
             >
               Log In
@@ -55,12 +67,16 @@ const Layout = ({ children }) => {
         
         
       </header>
-      <Modal 
-      isOpen={openModal} 
-      setIsModal={setOpenModal}
-       title="welcome">
+      <Modal
+        isOpen={isModalOpen}
+        closeModal={() =>
+          dispatch({
+            type: 'CLOSE_AUTH_MODAL',
+          })
+        }
+        title="Welcome"
+      >
         <Auth />
-
       </Modal>
       {children}
     </div >

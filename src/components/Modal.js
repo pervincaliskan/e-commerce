@@ -1,12 +1,9 @@
 import { Dialog, Transition } from '@headlessui/react'
 import { Fragment} from 'react'
 
-export default function Modal({isOpen, setIsOpen,title, children }){
+export default function Modal({isOpen, closeModal,title, children }){
 
-  function closeModal() {
-    setIsOpen(false);
-  }
-
+ 
 
   return (
   

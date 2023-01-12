@@ -1,24 +1,15 @@
 import axios from 'axios';
 import { useRouter } from 'next/router';
-import React, {  useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Layout from '../components/Layout';
 import Product from '../components/Product';
-import Image from 'next/image';
+import { ProductsContext } from '../state/ProductsContext';
+
+const API_URL = `http://localhost:3000`;
 
 const Home = () => {
-  const router  = useRouter();
-  const [products, setProducts] = useState([]);
+  const { products, loading } = useContext(ProductsContext);
 
-  useEffect(() => {
-    async function getProduct() {
-      const data = await axios.get("api/products");
-      console.log(data.data);
-      setProducts(data.data);
-    }
-    getProduct();
-  }, []);
-
- 
   return (
     <Layout>
       <main>

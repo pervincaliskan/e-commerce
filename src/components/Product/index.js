@@ -23,29 +23,53 @@ const Product = (product) => {
       <h3 className="text-xl font-semibold truncate">{product.name}</h3>
       <p className="truncate">{product.description}</p>
       <div className="relative aspect-video">
-      
+        {product.image && (
           <Image
             src={product.image}
             alt={product.name}
             layout="fill"
             objectFit="cover"
           />
-       
+        )}
       </div>
       <p>
         <span className="text-gray-600">${product.price}</span>
       </p>
-      <div className="lg:space-x-2 lg:space-y-0 space-x-0 space-y-2 flex-col flex lg:flex-row w-full">
-        <button className="py-0.5 h-full text-lg w-full bg-black hover:text-black hover:bg-white
-         border-black border text-white rounded">
+      <div className="flex flex-col w-full space-x-0 space-y-2 lg:justify-center lg:items-center lg:space-x-2 lg:space-y-0 lg:flex-row">
+        <button className="p-2 text-lg text-white bg-black border border-black rounded hover:text-black hover:bg-white">
           Buy now
         </button>
-        
-          <button className="py-0.5 h-full text-lg w-full bg-black hover:text-black hover:bg-white
-         border-black border text-white rounded" >
-             Add to cart
+        {!cartState[product.id] && !loading && (
+          <button
+            className="p-2 text-lg text-white bg-black border border-black rounded hover:text-black hover:bg-white"
+            onClick={() => addToCart(product)}
+            disabled={loading}
+          >
+            Add to cart
+          </button>
+        )}
+        <div className="flex items-center justify-center">
+          {loading && <FaSpinner className="w-full text-lg animate-spin" />}
+        </div>
+        {cartState[product.id] && !loading && (
+          <div className="flex items-center justify-center gap-x-4">
+            <button
+              className="flex items-center justify-center p-2 text-lg text-white bg-black border border-black rounded hover:text-black hover:bg-white"
+              onClick={() => handleCartOperation(removeFromCart(product))}
+              disabled={loading}
+            >
+              <AiOutlineMinus />
             </button>
-     
+            {cartState[product.id]}
+            <button
+              className="flex items-center justify-center p-2 text-lg text-white bg-black border border-black rounded hover:text-black hover:bg-white"
+              onClick={() => handleCartOperation(addToCart(product))}
+              disabled={loading}
+            >
+              <AiOutlinePlus />
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );

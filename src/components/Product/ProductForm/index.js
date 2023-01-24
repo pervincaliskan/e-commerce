@@ -4,6 +4,7 @@ import toast from 'react-hot-toast';
 import useForm from '../../../hooks/useForm';
 import { AuthContext } from '../../../state/AuthContext';
 import { supabase } from '../../../utils/supabaseClient';
+import {showErrorToast} from "../../../utils";
 
 const ProductForm = () => {
   const { form, handleChange, resetForm } = useForm({

@@ -24,7 +24,7 @@ const Layout = ({ children }) => {
 
   return (
     <div className="flex flex-col w-full h-full">
-      <header className="flex items-center justify-end w-full h-32 px-4 space-x-4 bg-gray-200">
+      <header className="flex items-center justify-end w-full h-32 px-4 space-x-4 bg-gradient-to-r text-white  from-violet-500 to-fuchsia-500">
         <div className="mr-auto text-2xl font-light select-none">
           <Link href="/">E-Commerce web app with Next.js</Link>
         </div>
@@ -32,7 +32,7 @@ const Layout = ({ children }) => {
           <>
             <div className="">
               <button
-                className="px-4 py-2 text-lg text-white bg-black border border-black rounded hover:text-black hover:bg-white"
+                className="px-4 py-2 text-lg text-white 	bg-violet-500  shadow-violet-500/50 background-color: rgb(134 25 143); border-black rounded hover:text-black hover:bg-white"
                 onClick={() =>
                   dispatch({
                     type: 'OPEN_AUTH_MODAL',
@@ -45,7 +45,7 @@ const Layout = ({ children }) => {
             </div>
             <div className="">
               <button
-                className="px-4 py-2 text-lg text-white bg-black border border-black rounded hover:text-black hover:bg-white"
+                className="px-4 py-2 text-lg text-white bg-violet-500  shadow-violet-500/50 background-color: rgb(134 25 143); border-black rounded hover:text-black hover:bg-white"
                 onClick={() =>
                   dispatch({
                     type: 'OPEN_AUTH_MODAL',

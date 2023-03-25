@@ -56,3 +56,13 @@ Enter your billing and delivery information.
 Click on the "Öde" button to complete the payment process.
 ![2](https://user-images.githubusercontent.com/52761014/227739032-f8445bd0-2046-4a7f-85d5-e6308bb35a53.gif)
 ![3](https://user-images.githubusercontent.com/52761014/227739044-217b6acd-9c04-40ab-a9b5-80325fa2ff64.gif)
+
+## Admin
+To manage the products on your website, you need to log in as an admin. You can follow the steps below to add or update products as an admin:
+
+Adding a Product
+Log in to the admin panel and click on the "Admin" section.
+Enter the product name, price, stock status, description, and upload an image.
+Click on the "Submit" button to save your product.
+![4](https://user-images.githubusercontent.com/52761014/227739420-4cae6ec3-b925-471f-9bcd-0a8a5a48cb0d.gif)
+![5](https://user-images.githubusercontent.com/52761014/227739438-06ee5ba8-681b-4353-bad1-e2ffadd6a1c0.gif)

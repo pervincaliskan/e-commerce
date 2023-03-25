@@ -32,3 +32,17 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+If you want to shop on our website as a registered user, you need to create an account first. 
+You can follow the steps below to complete the registration process:
+
+Click on the "Sign up" button located in the top right corner of the homepage.
+Enter your first name, last name, email address, and password.
+Click on the "Sign up" button to complete the registration process.
+
+Adding products to your cart is very easy! You can follow the steps below to add the product you like to your cart:
+
+Click on the "Sepete Ekle" button on the product page.
+You can check the number of products in your cart.
+
+![1](https://user-images.githubusercontent.com/52761014/227738725-b761a854-a1b6-492f-b1d2-671903a1bb70.gif)
